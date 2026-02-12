@@ -14,7 +14,7 @@ import { HydraTxBuilder } from "@/txbuilders/hydra.txbuilder";
 
 describe("Pact is a multi-party decentralized application (dApp) built on Cardano’s Hydra Head, designed to enable groups of people to safely pool funds for a shared goal (e.g., co-purchasing an NFT, funding a small project, or creating a community treasury).", function () {
     let meshWallet: MeshWallet;
-    let isCreator: boolean = true; 
+    let isCreator: boolean = false; 
     let hydraProvider: HydraProvider;
 
     beforeEach(async function () {
@@ -31,7 +31,8 @@ describe("Pact is a multi-party decentralized application (dApp) built on Cardan
         });
 
         hydraProvider = new HydraProvider({
-            httpUrl: isCreator ? HYDRA_HTTP_URL : HYDRA_HTTP_URL_SUB,
+            httpUrl: "http://217.217.253.66:4001",
+            history: true
             // wsUrl: isCreator ? HYDRA_WS_URL : HYDRA_WS_URL_SUB,
         });
     });
